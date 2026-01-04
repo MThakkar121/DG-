@@ -36,7 +36,7 @@ const Footer = () => {
     ];
 
     return (
-        <footer className="border-t border-border bg-background" role="contentinfo">
+        <footer className="border-t border-border bg-background relative" role="contentinfo">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
                 <div className="grid grid-cols-2 md:grid-cols-6 gap-8 mb-12">
                     {/* Brand Column */}
@@ -169,13 +169,19 @@ const Footer = () => {
                     </div>
                 </div>
 
-                {/* Bottom Bar */}
-                <div className="border-t border-border pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-muted-foreground">
+                <div className="border-t border-border pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-muted-foreground relative z-10">
                     <p>© {new Date().getFullYear()} Dialgood Technologies. All rights reserved.</p>
                     <p className="flex items-center gap-1">
                         Built with <span className="text-primary">♥</span> for the future of voice AI
                     </p>
                 </div>
+            </div>
+
+            {/* Massive Brand Watermark */}
+            <div className="w-full overflow-hidden flex justify-center items-end absolute bottom-0 left-0 -z-0 opacity-[0.03] dark:opacity-[0.05] pointer-events-none select-none">
+                <span className="font-serif font-black text-[18vw] leading-[0.75] tracking-tighter text-foreground whitespace-nowrap">
+                    DIALGOOD
+                </span>
             </div>
         </footer>
     );

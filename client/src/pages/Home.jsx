@@ -40,9 +40,18 @@ const HeroSection = () => {
     return (
         <section className="relative min-h-screen flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8 overflow-hidden pt-20">
             {/* Background Elements */}
-            <div className="absolute inset-0 -z-10">
-                <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl animate-glow-pulse" />
-                <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl animate-glow-pulse" style={{ animationDelay: '1s' }} />
+            <div className="absolute inset-0 -z-20">
+                <img
+                    src="/hero-nature.png"
+                    alt="Background"
+                    className="w-full h-full object-cover opacity-90"
+                />
+            </div>
+            {/* Dark Gradient Overlay for Text Readability */}
+            <div className="absolute inset-0 -z-10 bg-gradient-to-b from-background/40 via-background/20 to-background/90" />
+
+            <div className="absolute inset-0 -z-5 pointer-events-none">
+                <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl opacity-50" />
             </div>
 
             <motion.div
@@ -56,32 +65,32 @@ const HeroSection = () => {
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ delay: 0.2 }}
-                    className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/20 bg-primary/5 mb-8"
+                    className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/20 bg-black/30 backdrop-blur-md mb-8 text-white shadow-lg"
                 >
                     <Sparkles className="w-4 h-4 text-primary" />
                     <span className="text-sm font-medium">Next-Gen Voice Platform</span>
                 </motion.div>
 
                 {/* Main Headline */}
-                <h1 className="font-serif text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-medium leading-[1.1] mb-8 text-balance">
+                <h1 className="font-serif text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-medium leading-[1.1] mb-8 text-balance drop-shadow-2xl">
                     Voice Agents that <br />
-                    <span className="italic text-primary">Grow</span> with Your Business
+                    <span className="italic text-primary drop-shadow-md">Grow</span> with Your Business
                 </h1>
 
                 {/* Subheadline */}
-                <p className="text-lg sm:text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto mb-12 font-light">
+                <p className="text-lg sm:text-xl md:text-2xl text-white/90 max-w-3xl mx-auto mb-12 font-light drop-shadow-lg leading-relaxed">
                     The World's First Agent that isn't Stuck with One Model. Orchestrate multi-skill agents that think, collaborate, and act.
                 </p>
 
                 {/* CTA Buttons */}
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
-                    <Button asChild size="xl" className="group">
+                    <Button asChild size="xl" className="group shadow-xl shadow-primary/20">
                         <Link to="/contact">
                             Get Started Now
                             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                         </Link>
                     </Button>
-                    <Button asChild variant="outline" size="xl" className="group">
+                    <Button asChild variant="outline" size="xl" className="group bg-black/20 border-white/20 text-white hover:bg-black/40 backdrop-blur-sm">
                         <Link to="/resources">
                             <Play className="w-5 h-5" />
                             Watch Demo
@@ -95,7 +104,7 @@ const HeroSection = () => {
                     transition={{ duration: 2, repeat: Infinity }}
                     className="absolute bottom-10 left-1/2 -translate-x-1/2"
                 >
-                    <ChevronDown className="w-8 h-8 text-muted-foreground" />
+                    <ChevronDown className="w-8 h-8 text-white/70" />
                 </motion.div>
             </motion.div>
         </section>
