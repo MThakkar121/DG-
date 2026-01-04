@@ -21,7 +21,7 @@ const Navbar = () => {
 
     const navLinks = [
         { name: 'Features', href: '/features' },
-        { name: 'Voice Builder', href: '/voice-agent-builder' },
+        { name: 'Voice Agent Builder', href: '/voice-agent-builder' },
         { name: 'Integrations', href: '/zapier' },
         { name: 'Pricing', href: '/pricing' },
         { name: 'Resources', href: '/resources' },
